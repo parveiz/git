@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions" 
+	xmlns:p="http://primefaces.org/ui" lang="en">
+	<h:head>
+		<title>JSF 2.2 Page</title>
+		<meta name="keywords" content="enter,your,keywords,here"/>
+		<meta name="description" content="A short description of this page."/>
+		<meta name="content-type" content="text/html; charset=UTF-8"/>
+	<title>TechSol Login Page</title>
+</h:head>
+
+<h:body>
+	<h:form id="form" method="post">
+		<table>
+		<tr>
+			<td><p:outputLabel for="userId" value="Username" /></td>
+			<td>	<p:inputText id="userId" value="#{loginBean.user.username}"
+					type="text"  />
+		</td>
+		</tr>
+		<tr>
+			<td><p:outputLabel for="passwordId" value="Password" /></td>
+			<td><p:password type="submit" id="passwordId"
+					value="#{loginBean.user.password}"  />
+		</td>
+		</tr>
+		
+		<tr>
+		<td>
+			<p:commandButton type="submit" value="Login" id="loginButton"
+				action="#{loginBean.Login()}">
+			</p:commandButton>
+		</td>
+		</tr>
+		</table>
+	</h:form>
+</h:body>
+</html>

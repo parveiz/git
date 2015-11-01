@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions"
+	xmlns:p="http://primefaces.org/ui" lang="en">
+<h:head>
+	<title>JSF 2.2 Page</title>
+	<meta name="keywords" content="enter,your,keywords,here" />
+	<meta name="description" content="A short description of this page." />
+	<meta name="content-type" content="text/html; charset=UTF-8" />
+
+</h:head>
+<h:body>
+	<h:form id="form" method="post">
+		<table>
+			<tr>
+				<td><p:outputLabel for="providerCodeId" value="Provider Code" /></td>
+				<td><p:inputText id="providerCodeId"
+						value="#{claimBean.geninfo.providerid}" type="text" /></td>
+				<td><p:outputLabel for="payerCodeId" value="Payer Code" /></td>
+				<td><p:inputText id="payerCodeId"
+						value="#{claimBean.geninfo.payerid}" type="text" /></td>
+				<td><p:outputLabel for="tpaCodeId" value="TPA Code" /></td>
+				<td><p:inputText id="tpaCodeId"
+						value="#{claimBean.geninfo.tpaid}" type="text" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel for="providerClaimNoId"
+						value="Provider Claim No" /></td>
+				<td><p:inputText id="providerClaimNoId"
+						value="#{claimBean.geninfo.provclaimno}" type="text" /></td>
+				<td><p:outputLabel for="patientNameId" value="Patient Name" /></td>
+				<td><p:inputText id="patientNameId"
+						value="#{claimBean.geninfo.fullname}" type="text" /></td>
+				<td><p:outputLabel for="patientFileNoId"
+						value="Patient File No" /></td>
+				<td><p:inputText id="patientFileNoId"
+						value="#{claimBean.geninfo.patfileno}" type="text" /></td>
+				<td><p:outputLabel for="approvalRefNoId"
+						value="Approval Ref No" /></td>
+				<td><p:inputText id="approvalRefNoId"
+						value="#{claimBean.geninfo.apprefno}" type="text" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel for="memberIdId" value="Member Id" /></td>
+				<td><p:inputText id="memberIdId"
+						value="#{claimBean.geninfo.memberid}" type="text" /></td>
+				<td><p:outputLabel for="policyNoId" value="Policy No" /></td>
+				<td><p:inputText id="policyNoId"
+						value="#{claimBean.geninfo.policyno}" type="text" /></td>
+				<td><p:outputLabel for="ageId" value="Age" /></td>
+				<td><p:inputText id="ageId"
+						value="#{claimBean.geninfo.unitage}" type="text" /></td>
+				<td><p:outputLabel for="genderId" value="Gender" /></td>
+				<td><p:inputText id="genderId"
+						value="#{claimBean.geninfo.gender}" type="text" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel for="physicianIdId" value="Physician Id" /></td>
+				<td><p:inputText id="physicianIdId"
+						value="#{claimBean.geninfo.phyid}" type="text" /></td>
+				<td><p:outputLabel for="physicianNameId" value="Physician Name" /></td>
+				<td><p:inputText id="physicianNameId"
+						value="#{claimBean.geninfo.phyname}" type="text" /></td>
+				<td><p:outputLabel for="physicianCategoryId"
+						value="Physician Category" /></td>
+				<td><p:inputText id="physicianCategoryId"
+						value="#{claimBean.geninfo.phycategory}" type="text" /></td>
+				<td><p:outputLabel for="departmentCodeId"
+						value="Department Code" /></td>
+				<td><p:inputText id="departmentCodeId"
+						value="#{claimBean.geninfo.deptcode}" type="text" /></td>
+			</tr>
+			<tr>
+				<td><p:outputLabel for="visitTypeId" value="Visit Type" /></td>
+				<td><p:inputText id="visitTypeId"
+						value="#{claimBean.geninfo.visittype}" type="text" /></td>
+				<td><p:outputLabel for="claimTypeId" value="Claim Type" /></td>
+				<td><p:inputText id="claimTypeId"
+						value="#{claimBean.geninfo.claimtype}" type="text" /></td>
+				<td><p:outputLabel for="claimDateId" value="Claim Date" /></td>
+				<td><p:calendar id="claimDateId"
+						value="#{claimBean.geninfo.claimdate}" /></td>
+			</tr>
+			<tr>
+				<td><p:commandButton id="addInvoiceButton" value="Add Invoice"
+						type="button" onclick="PF('invoiceDlg').show();">
+						</p:commandButton></td>
+			</tr>
+			<tr>
+				<td><p:commandButton type="submit" value="Save" id="saveButton"
+						action="#{claimBean.Save()}">
+					</p:commandButton></td>
+			</tr>
+		</table>
+		<ui:include src="/web/xhtml/invoice.xhtml" />
+	</h:form>
+</h:body>
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14376890135440" configfile="/techsol/WebRoot/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="web/xhtml/login" id="pf14377657177600" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf14377657177601" path="/web/xhtml/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="web/xhtml/claim.xhtml" id="pf14377657177602" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf14377657177601" path="/web/xhtml/claim.xhtml"/>
+  <links id="pf14377657177601" target="pf14377657177602" source="pf14377657177600" outcome="LoginSuccessful" redirect="true"/>
+</pageflow:Pageflow>

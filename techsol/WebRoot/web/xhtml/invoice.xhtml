@@ -1,0 +1,40 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+	xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions"
+	xmlns:p="http://primefaces.org/ui">
+
+	<p:dialog header="Invoice" widgetVar="invoiceDlg" modal="true"
+		height="150">
+		<table>
+			<tr>
+				<td><p:outputLabel for="invoiceNoId" value="Invoice No" /></td>
+				<td><p:inputText id="invoiceNoId"
+						value="#{claimBean.invoices.invoiceno}" type="text" /></td>
+			</tr>
+			
+			<tr>
+				<td><p:outputLabel for="invoiceDateId" value="Invoice Date" /></td>
+				<td><p:inputText id="invoiceDateId"
+						value="#{claimBean.invoices.invoicedate}" type="text" /></td>
+			</tr>
+			
+			<tr>
+				<td><p:outputLabel for="invoiceDeptId" value="Invoice Department" /></td>
+				<td><p:inputText id="invoiceDeptId"
+						value="#{claimBean.invoices.invoicedept}" type="text" /></td>
+			</tr>
+			
+			<tr>
+				<td><p:commandButton type="submit" value="Add" id="addButton"
+						actionListener="#{claimBean.addInvoiceToClaim}"
+						oncomplete="PF('invoiceDlg').hide();">
+					</p:commandButton></td>
+			</tr>
+			
+		</table>
+	</p:dialog>
+
+</ui:composition>
